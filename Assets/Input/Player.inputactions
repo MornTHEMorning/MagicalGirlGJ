@@ -1,0 +1,45 @@
+{
+    "name": "Player",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "561a22c0-9f99-4596-887c-001e14d6a0b1",
+            "actions": [
+                {
+                    "name": "Keyboard",
+                    "type": "Button",
+                    "id": "2394d819-869a-4244-be07-36e83cbf0d56",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "58492e52-8dc3-416d-88ca-ebba87e6d663",
+                    "path": "<Keyboard>/f",
+                    "interactions": "Tap",
+                    "processors": "Normalize",
+                    "groups": "",
+                    "action": "Keyboard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d552f4d7-98c3-441c-a672-edf54da1c8d8",
+                    "path": "<Keyboard>/j",
+                    "interactions": "Tap",
+                    "processors": "Normalize",
+                    "groups": "",
+                    "action": "Keyboard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
