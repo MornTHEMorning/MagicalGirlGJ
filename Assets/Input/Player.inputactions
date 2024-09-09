@@ -2,16 +2,25 @@
     "name": "Player",
     "maps": [
         {
-            "name": "Movement",
+            "name": "PlayerInputs",
             "id": "561a22c0-9f99-4596-887c-001e14d6a0b1",
             "actions": [
                 {
-                    "name": "Keyboard",
-                    "type": "Button",
+                    "name": "Movement",
+                    "type": "Value",
                     "id": "2394d819-869a-4244-be07-36e83cbf0d56",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Shooting",
+                    "type": "Button",
+                    "id": "30d41b34-a090-4d8c-aa19-c810577a4a14",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": true
                 }
             ],
@@ -20,10 +29,32 @@
                     "name": "",
                     "id": "58492e52-8dc3-416d-88ca-ebba87e6d663",
                     "path": "<Keyboard>/f",
-                    "interactions": "Tap",
-                    "processors": "Normalize",
+                    "interactions": "",
+                    "processors": "",
                     "groups": "",
-                    "action": "Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d6c9141-e046-4072-a4df-9db5223e0471",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6b874887-c93e-47f1-81cf-3b2056cc8c74",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -31,10 +62,21 @@
                     "name": "",
                     "id": "d552f4d7-98c3-441c-a672-edf54da1c8d8",
                     "path": "<Keyboard>/j",
-                    "interactions": "Tap",
-                    "processors": "Normalize",
+                    "interactions": "",
+                    "processors": "",
                     "groups": "",
-                    "action": "Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f65a710d-009e-40b8-b584-39a701fc8640",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shooting",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

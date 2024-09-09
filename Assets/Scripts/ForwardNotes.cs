@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class ForwardNotes : MonoBehaviour
 {
-    //attached is the "notes" -- aka obstacles; they only go towards camer, z position (decreasing)
+    //attached is the "notes" -- aka obstacles; they only go towards camera, z position (decreasing)
 
     private GameObject notePosition;
+
+    public GameObject laneGO;
+    private float lanePosition; //aka z value of lane
 
     //if debug Log is on, it'll turn on
     public bool Debug_On;
@@ -16,6 +19,8 @@ public class ForwardNotes : MonoBehaviour
     void Start()
     {
         notePosition = GetComponent<GameObject>();
+        // laneGO = GetComponent<GameObject>();
+        // float lanePosition = laneGO.transform.position.z;
     }
 
     // Update is called once per frame
@@ -23,8 +28,10 @@ public class ForwardNotes : MonoBehaviour
     {
         //do collision afterwards
 
-        transform.position = (transform.position - new Vector3(0,0,0.1f));
-        if(Debug_On){Debug.Log(transform.position);}
+        // if(!(notePosition.transform.position.z >= lanePosition)){
+            transform.position = (transform.position - new Vector3(0,0,0.1f));
+            if(Debug_On){Debug.Log("Object: "+nameof(notePosition)+" Position:"+transform.position);}
+        // }
         
     }
 }
