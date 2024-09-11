@@ -186,6 +186,22 @@ PrefabInstance:
       propertyPath: jPosition
       value: 
       objectReference: {fileID: 544773965}
+    - target: {fileID: 2570438177096525220, guid: b51b257cccd8848b687a46e288fb1b15, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: PlayerInputs
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570438177096525220, guid: b51b257cccd8848b687a46e288fb1b15, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570438177096525220, guid: b51b257cccd8848b687a46e288fb1b15, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 30d41b34-a090-4d8c-aa19-c810577a4a14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570438177096525220, guid: b51b257cccd8848b687a46e288fb1b15, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: PlayerInputs/Shooting[/Keyboard/space]
+      objectReference: {fileID: 0}
     - target: {fileID: 3620403886779937686, guid: b51b257cccd8848b687a46e288fb1b15, type: 3}
       propertyPath: m_Name
       value: Player

@@ -6,9 +6,8 @@ using UnityEngine.InputSystem;
 
 public class GamePlayerMovement : MonoBehaviour
 {
-    public Player playerInputMap;
-    private InputAction move;
-    private InputAction shoot;
+    // public Player playerInputMap;
+    // private InputAction move;
 
     #region Lane Positions
     [Header("Lanes to Traverse")]
@@ -26,25 +25,25 @@ public class GamePlayerMovement : MonoBehaviour
     public bool ActivateConsole = false;
 
     #endregion
-    internal void Awake(){
-        playerInputMap = new Player(); 
-    }
+    // internal void Awake(){
+    //     // playerInputMap = new Player(); 
+    // }
 
-    private void OnEnable(){
-        move = playerInputMap.PlayerInputs.Movement;
-        move.Enable();
+    // private void OnEnable(){
+    //     move = playerInputMap.PlayerInputs.Movement;
+    //     move.Enable();
 
-        if(ActivateConsole){
-                Debug.Log("Movement Enabled");
-       }
-    }
+    //     if(ActivateConsole){
+    //             Debug.Log("Movement Enabled");
+    //    }
+    // }
 
-    private void OnDisable(){
-       move.Disable();
-       if(ActivateConsole){
-                Debug.Log("Movement Disabled");
-       }
-    }
+    // private void OnDisable(){
+    //    move.Disable();
+    //    if(ActivateConsole){
+    //             Debug.Log("Movement Disabled");
+    //    }
+    // }
 
     internal void Start()
     {
@@ -57,28 +56,13 @@ public class GamePlayerMovement : MonoBehaviour
         else{
             defaultPlayerPosition = this.transform.position;
             
-            //starting position is g
+            //starting position is g 
             this.transform.position = new Vector3(gPosition.transform.position.x, defaultPlayerPosition.y, defaultPlayerPosition.z);
         }
-
-
-        //todo next: grab keyboard input.. hang on this is like face with shen to get placement lol
-        /*
-           public void SetMoveInput(InputAction.CallbackContext context)
-        {
-            moveInput = context.ReadValue<Vector2>();
-        } roughly how you get the input from the input system
-        */
-
     }
 
     internal void Update()
     {
-        
-        // if(Keyboard.current.spaceKey.wasPressedThisFrame){
-        //     Debug.Log("shoot ya shot (later)");
-        // }
-
         //TODO: the below WITH the new input system: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/QuickStartGuide.html
         if(Keyboard.current.fKey.wasPressedThisFrame){
             if(ActivateConsole){Debug.Log("F Key pressed");}
