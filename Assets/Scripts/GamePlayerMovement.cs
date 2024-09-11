@@ -10,9 +10,21 @@ public class GamePlayerMovement : MonoBehaviour
     private InputAction move;
     private InputAction shoot;
 
-    public bool ActivateConsole;
+    #region Lane Positions
+    public Transform fPosition;
+    public Transform gPosition;
+    public Transform hPosition;
+    public Transform jPosition;
+    #endregion
 
-    void Awake(){
+    private Vector3 defaultPlayerPosition;
+
+
+    #region Console Stuff 
+    private bool ActivateConsole;
+
+    #endregion
+    internal void Awake(){
         playerInputMap = new Player(); 
     }
 
@@ -32,9 +44,19 @@ public class GamePlayerMovement : MonoBehaviour
        }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    internal void Start()
     {
+        // check to see if lanes are there
+        if(!(fPosition && gPosition && hPosition && hPosition)){
+            Debug.Log("Missing lanes FGHJ position, cannot run");
+            this.enabled = false;
+        }
+
+        else{
+            defaultPlayerPosition = this.transform.position;
+        }
+
+
         //todo next: grab keyboard input.. hang on this is like face with shen to get placement lol
         /*
            public void SetMoveInput(InputAction.CallbackContext context)
@@ -45,16 +67,33 @@ public class GamePlayerMovement : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    internal void Update()
     {
+        
         // if(Keyboard.current.spaceKey.wasPressedThisFrame){
         //     Debug.Log("shoot ya shot (later)");
         // }
-        if(Keyboard.current.fKey.wasPressedThisFrame){Debug.Log("F?");}
-        else if(Keyboard.current.gKey.wasPressedThisFrame){Debug.Log("G?");}
-        else if(Keyboard.current.hKey.wasPressedThisFrame){Debug.Log("H?");}
-        else if(Keyboard.current.jKey.wasPressedThisFrame){Debug.Log("J?");}
+
+        //TODO: the below WITH the new input system: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/QuickStartGuide.html
+        if(Keyboard.current.fKey.wasPressedThisFrame){
+            if(ActivateConsole){Debug.Log("F Key pressed");}
+            this.transform.position = new Vector3(fPosition.transform.position.x, defaultPlayerPosition.y, defaultPlayerPosition.z);
+
+        }
+        else if(Keyboard.current.gKey.wasPressedThisFrame){
+            if(ActivateConsole){Debug.Log("G Key was pressed");}
+            this.transform.position = new Vector3(gPosition.transform.position.x, defaultPlayerPosition.y, defaultPlayerPosition.z);
+        }
+
+        else if(Keyboard.current.hKey.wasPressedThisFrame){
+             if(ActivateConsole){Debug.Log("H was pressed");}
+            this.transform.position = new Vector3(hPosition.transform.position.x, defaultPlayerPosition.y, defaultPlayerPosition.z);
+
+        }
+        else if(Keyboard.current.jKey.wasPressedThisFrame){
+             if(ActivateConsole){Debug.Log("J was pressed");}
+            this.transform.position = new Vector3(jPosition.transform.position.x, defaultPlayerPosition.y, defaultPlayerPosition.z);
+        }
 
         
     }
