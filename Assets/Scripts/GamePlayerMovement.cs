@@ -11,6 +11,7 @@ public class GamePlayerMovement : MonoBehaviour
     private InputAction shoot;
 
     #region Lane Positions
+    [Header("Lanes to Traverse")]
     public Transform fPosition;
     public Transform gPosition;
     public Transform hPosition;
@@ -21,7 +22,8 @@ public class GamePlayerMovement : MonoBehaviour
 
 
     #region Console Stuff 
-    private bool ActivateConsole;
+    [Header("Debug")]
+    public bool ActivateConsole = false;
 
     #endregion
     internal void Awake(){
@@ -54,6 +56,9 @@ public class GamePlayerMovement : MonoBehaviour
 
         else{
             defaultPlayerPosition = this.transform.position;
+            
+            //starting position is g
+            this.transform.position = new Vector3(gPosition.transform.position.x, defaultPlayerPosition.y, defaultPlayerPosition.z);
         }
 
 
