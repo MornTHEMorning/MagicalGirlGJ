@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class GamePlayerMovement : MonoBehaviour
 {
     public Player playerInputMap;
-    private InputAction move;
+        private InputAction move;
     private InputAction shoot;
 
     #region Lane Positions
