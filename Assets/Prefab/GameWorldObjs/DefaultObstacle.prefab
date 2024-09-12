@@ -150,4 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d1861880bff4ba5bd0b4149034a609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Debug_On: 0
+  lanePath: {fileID: 0}
+  speed: 1
+  ActivateConsole: 0

@@ -1,37 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
+[RequireComponent(typeof(RigidBody2D))]
+[RequireComponent(typeof(BoxCollider))]
 public class ForwardNotes : MonoBehaviour
 {
-    //attached is the "notes" -- aka obstacles; they only go towards camera, z position (decreasing)
+    /*
+        [x] Phase 1: attached is the "notes" -- aka obstacles; they only go towards camera, z position (decreasing) 
+        [x] Phase 2: Given a specific path, it will travel in the path
+        Phase 3: Collision with back bars
+            At this point, give same treatment, but make a PlayerDie script
+    */
 
-    private GameObject notePosition;
+    [Tooltip("Mandatory; Lane this obstacle will travel in")]
+    public Transform lanePath;
+    public int speed = 1;
 
-    public GameObject laneGO;
-    private float lanePosition; //aka z value of lane
+    [Header("Debug")]
+    public bool ActivateConsole;
 
-    //if debug Log is on, it'll turn on
-    public bool Debug_On;
-
-
-    // Start is called before the first frame update
-    void Start()
+    internal void Start()
     {
-        notePosition = GetComponent<GameObject>();
-        // laneGO = GetComponent<GameObject>();
-        // float lanePosition = laneGO.transform.position.z;
+        if(!lanePath){
+            Debug.Log("No lane path given -- ForwardNotes cannot run");
+            this.enabled = false;
+        }
+
+        else{
+            transform.position = new Vector3(lanePath.position.x, transform.position.y, transform.position.z);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    internal void Update()
     {
-        //do collision afterwards
+            //update position
+            transform.position = (transform.position - new Vector3(0,0,0.1f*speed));
 
-        // if(!(notePosition.transform.position.z >= lanePosition)){
-            transform.position = (transform.position - new Vector3(0,0,0.1f));
-            if(Debug_On){Debug.Log("Object: "+nameof(notePosition)+" Position:"+transform.position);}
-        // }
-        
+            if(ActivateConsole){
+                Debug.Log("Object: "+nameof(this.transform.parent)+" Position:"+transform.position);
+            }
+            CheckCollision();        
     }
+
+    //replace with OnTriggerEnter() later
+    private void CheckCollision()
+    {
+        if(ActivateConsole){Debug.Log("Collision occured!");}
+    }
+
 }
