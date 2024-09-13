@@ -12,12 +12,12 @@ public class IconFollowGamePlayer : MonoBehaviour
 
     [Header("References")]
 
-    [Tooltip("Mandatory, which camera as reference")]
+    [Tooltip("Mandatory, which camera as reference")] //Usually be Main Camera Attached
     public Camera cameraPerspective;
 
 
     [Tooltip("Mandatory, ref to player in game world")]
-    public Transform playerGO;
+    public Transform playerGO; //Player itself
 
     [Header("Events")]
     

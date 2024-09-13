@@ -8,7 +8,7 @@ public class GamePlayerDeath : MonoBehaviour
 {
 
     [Header("Events")]
-    public UnityEvent OnPlayerDies;
+    public UnityEvent OnPlayerDies; //Add HUD > Player_Icon ; Set Active . Disabled
 
     [Header("Debug")]
     public bool ActivateConsole;
