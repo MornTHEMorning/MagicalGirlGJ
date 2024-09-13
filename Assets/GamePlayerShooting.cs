@@ -11,8 +11,6 @@ public class GamePlayerShooting : MonoBehaviour
         space -> creates a small cube that continues straight
             then in a seperate place, kinda like pets in chimera craft:
                 the cube is two things: cube and script that keeps going forward until it hits something -- for ease, use tags
-                
-
     */
 
     #region Variables
