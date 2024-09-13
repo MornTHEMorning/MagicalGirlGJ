@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 742788493}
   - component: {fileID: 742788495}
   - component: {fileID: 742788494}
+  - component: {fileID: 742788496}
   m_Layer: 0
   m_Name: Textbox
   m_TagString: Untagged
@@ -274,6 +275,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742788492}
   m_CullTransparentMesh: 1
+--- !u!114 &742788496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742788492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950cdf920667146de884e977d7e378a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 860301968}
+  lines:
+  - "My name is Umbra, I\u2019m a new wave magical girl!  That god over there is
+    my mom! Seems like she\u2019s had a rough day? "
+  - "I\u2019m running low on magic power\u2026 Help me reach my mom! Change lanes
+    with the {F, G, H, J} keys!  "
+  - "Please don\u2019t let me get hit.. I\u2019m really low on health, so if I take
+    any more damage\u2026 Well, it\u2019s over. "
+  textSpeed: 0
 --- !u!1 &860301966
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,8 +353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "My name is <color=\"purple\">Umbra</color>, I\u2019m a new wave magical
-    girl! That god over there is my mom! Seems like she\u2019s had a rough day?\n"
+  m_text: bottom text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -359,7 +380,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.75
+  m_fontSize: 72
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1

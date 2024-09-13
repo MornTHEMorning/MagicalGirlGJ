@@ -254,7 +254,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6844865895902770998}
-  - component: {fileID: 2918294462025763518}
   - component: {fileID: 5156299290817647842}
   m_Layer: 0
   m_Name: Dialogue Camera
@@ -279,14 +278,6 @@ Transform:
   - {fileID: 1765532170369746449}
   m_Father: {fileID: 4606670231233175138}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &2918294462025763518
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6694039724995244803}
-  m_Enabled: 1
 --- !u!114 &5156299290817647842
 MonoBehaviour:
   m_ObjectHideFlags: 0
