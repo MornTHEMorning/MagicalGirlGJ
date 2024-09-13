@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement; 
 
-
+namespace Dialogue{
 public class DialogueSystem : MonoBehaviour
 {
 
@@ -18,15 +19,18 @@ public class DialogueSystem : MonoBehaviour
     [Tooltip("Letter per speed; bigger == longer time")]
     public float textSpeed;
 
+    [Header("Next Scene")]
+    [Tooltip("Scene after this dialogue runs -- check your build settings for scene name")]
+
+    //Get this back! -- removed for debug purposes
+    // public string nextScene = "Scenes/MainScene"; //default is go to main
+
     private int index;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
-        StartDialogue();
-        
+        StartDialogue();        
     }
 
     void Update(){
@@ -42,7 +46,6 @@ public class DialogueSystem : MonoBehaviour
                 textComponent.text = lines[index];
             }
         }
-
     }
 
     void StartDialogue(){
@@ -63,6 +66,10 @@ public class DialogueSystem : MonoBehaviour
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
-        else{gameObject.SetActive(false);}
+        else{
+            gameObject.SetActive(false);
+            // SceneManager.LoadScene(nextScene);
+        }
     }
+}
 }
