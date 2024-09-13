@@ -18,6 +18,8 @@ public class ForwardNotes : MonoBehaviour
     public int speed = 1;
     
 
+    public UnityEvent StartGoing;
+
     [Header("Debug")]
     public bool ActivateConsole;
 
@@ -38,6 +40,8 @@ public class ForwardNotes : MonoBehaviour
 
             //Set up defaults, as I can't access unity rn -- want it to work when I get it up and going
             SetUpBoxCollider(GetComponent<BoxCollider>());
+
+            StartGoing.Invoke();
         }
     }
 
