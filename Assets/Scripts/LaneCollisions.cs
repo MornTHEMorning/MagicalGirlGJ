@@ -8,8 +8,6 @@ public class LaneCollisions : MonoBehaviour
 {
     public bool ActivateConsole;
 
-
-
     private void SetUpBoxCollider(BoxCollider boxCollider){
         boxCollider.isTrigger = true;
     }
@@ -17,18 +15,12 @@ public class LaneCollisions : MonoBehaviour
         rb.useGravity = false;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    internal void Start()
     {
             SetUpBoxCollider(GetComponent<BoxCollider>());
             SetUpRigidbody(GetComponent<Rigidbody>());   
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     internal void OnTriggerEnter(Collider other){
         if(ActivateConsole){Debug.Log("Collision occured!");}
@@ -36,7 +28,7 @@ public class LaneCollisions : MonoBehaviour
         //https://www.youtube.com/watch?v=mkErt53EEFY - from this video
         if(other.gameObject.CompareTag("Enemy")){
             if(ActivateConsole){Debug.Log("Obstacle is being destroyed rn");}
-            Destroy(other.gameObject,0.5f); //if it hits the riff, destroy yourself
+            Destroy(other.gameObject,0.5f); //if incoming enemy hits riff, destroy it
         }
     }
 }

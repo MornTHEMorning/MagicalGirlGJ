@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(BoxCollider))]
 public class ForwardNotes : MonoBehaviour
 {
     /*
         [x] Phase 1: attached is the "notes" -- aka obstacles; they only go towards camera, z position (decreasing) 
         [x] Phase 2: Given a specific path, it will travel in the path
-        [not yet, didn't destroy itself with collision; TODO] Phase 3: Collision with back bars
+        [x] Phase 3: Collision with back bars -- implemented through Lanes' LaneCollisions script
             At this point, give same treatment, but make a PlayerDie script
     */
 
@@ -18,7 +17,6 @@ public class ForwardNotes : MonoBehaviour
     public Transform lanePath;
     public int speed = 1;
     
-    private bool decimateSelf = false;
 
     [Header("Debug")]
     public bool ActivateConsole;
@@ -27,15 +25,6 @@ public class ForwardNotes : MonoBehaviour
         boxCollider.isTrigger = true;
     }
 
-    /* ALT I wanna try - since colliders are inherited
-     // private void SetUpCollider(Collider collider){
-    //     collider.IsTrigger = true;
-    // }
-    */
-
-    private void SetUpRigidbody(Rigidbody rb){
-        rb.useGravity = false;
-    }
 
     internal void Start()
     {
@@ -49,9 +38,6 @@ public class ForwardNotes : MonoBehaviour
 
             //Set up defaults, as I can't access unity rn -- want it to work when I get it up and going
             SetUpBoxCollider(GetComponent<BoxCollider>());
-            // SetUpRigidbody(GetComponent<Rigidbody>());
-
-            decimateSelf = false;
         }
     }
 
