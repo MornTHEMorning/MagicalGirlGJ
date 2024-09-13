@@ -6,12 +6,16 @@ using UnityEngine.UI;
 
 public class ImageUI : MonoBehaviour
 {
-    [Header("Images, Background Images")]
+    [Header("List of Background Images")]
     public Sprite[] images;
 
-    public Image currentImage;
+    private Image currentImage;
 
     private int index = 0;
+
+    [Header("Debug")]
+    public bool ActivateConsole;
+
 
     void Start()
     {
@@ -23,7 +27,7 @@ public class ImageUI : MonoBehaviour
         }
         else
         {
-            Debug.Log("ImageUI has been disabled; no bg images");
+            if(ActivateConsole){Debug.Log("ImageUI has been disabled; no bg images");}
             this.enabled = false;
         }
     }
@@ -50,7 +54,7 @@ public class ImageUI : MonoBehaviour
     {
         if (currentImage != null && index >= 0 && index < images.Length)
         {
-            Debug.Log($"currentImage: {currentImage} || sprite: {currentImage.sprite}");
+            if(ActivateConsole)Debug.Log($"currentImage: {currentImage} || sprite: {currentImage.sprite}");
             currentImage.sprite = images[index];
         }
         else
