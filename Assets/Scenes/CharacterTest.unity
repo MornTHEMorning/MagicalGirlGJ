@@ -333,14 +333,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 860301968}
   lines:
-  - "My name is Umbra, I\u2019m a new wave magical girl!  That god over there is
-    my mom! Seems like she\u2019s had a rough day? "
-  - "I\u2019m running low on magic power\u2026 Help me reach my mom! Change lanes
-    with the {F, G, H, J} keys!  "
-  - "Please don\u2019t let me get hit.. I\u2019m really low on health, so if I take
-    any more damage\u2026 Well, it\u2019s over. "
+  - "???: My name is Umbra, I\u2019m a new wave magical girl!  That god over there
+    is my mom! Seems like she\u2019s had a rough day? "
+  - "Umbra: I\u2019m running low on magic power\u2026 Help me reach my mom! Change
+    lanes with the {F, G, H, J} keys!  "
+  - "Umbra: Please don\u2019t let me get hit.. I\u2019m really low on health, so
+    if I take any more damage\u2026 Well, it\u2019s over. "
   textSpeed: 0
-  nextScene: 
 --- !u!1 &860301966
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.524, y: -14}
+  m_AnchoredPosition: {x: 25, y: -0}
   m_SizeDelta: {x: 1743.3887, y: 302.649}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &860301968
@@ -420,7 +419,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 2192
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -433,7 +432,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -461,7 +460,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 53.19745, y: 109.45746, z: 98.755615, w: 82.56459}
+  m_margin: {x: 53.19745, y: 75.11957, z: 98.755615, w: 74.17006}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -492,7 +491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &960648717
 RectTransform:
   m_ObjectHideFlags: 0
@@ -845,6 +844,7 @@ GameObject:
   - component: {fileID: 1770126566}
   - component: {fileID: 1770126568}
   - component: {fileID: 1770126567}
+  - component: {fileID: 1770126569}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -909,6 +909,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770126565}
   m_CullTransparentMesh: 1
+--- !u!114 &1770126569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770126565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c9feea480aa4607a0abb481c057be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 21300000, guid: 49f120490159f4d9dae6b074018e4c4a, type: 3}
+  - {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  currentImage: {fileID: 0}
 --- !u!1 &1807835341
 GameObject:
   m_ObjectHideFlags: 0
