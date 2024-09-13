@@ -102,9 +102,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -154,6 +154,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56547ed1ae28d4b538a3a07a8f52a85b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnChangeToLaneF:
+    m_PersistentCalls:
+      m_Calls: []
+  OnChangeToLaneG:
+    m_PersistentCalls:
+      m_Calls: []
+  OnChangeToLaneH:
+    m_PersistentCalls:
+      m_Calls: []
+  OnChangeToLaneJ:
+    m_PersistentCalls:
+      m_Calls: []
   fPosition: {fileID: 0}
   gPosition: {fileID: 0}
   hPosition: {fileID: 0}
@@ -171,3 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a538491e4972649428bd0df9ee66e17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPlayerDies:
+    m_PersistentCalls:
+      m_Calls: []
+  ActivateConsole: 0
