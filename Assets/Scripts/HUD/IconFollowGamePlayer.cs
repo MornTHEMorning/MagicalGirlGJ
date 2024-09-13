@@ -8,8 +8,6 @@ Attached Player_Icon under HUD Prefab; makes sure HUD version of player follows 
 */
 public class IconFollowGamePlayer : MonoBehaviour
 {
-    
-    //Look into this!: RectTransform.drivenByObject
     private RectTransform iconPosition;
 
     [Header("References")]
@@ -49,6 +47,10 @@ public class IconFollowGamePlayer : MonoBehaviour
     internal void Update()
     {
         if(ActivateConsole){Debug.Log($"iconPosition: {iconPosition} || player position: {playerGO.transform.position}");}
+        //https://docs.unity3d.com/ScriptReference/Camera.WorldToScreenPoint.html 
+        GetComponent<RectTransform>().position = cameraPerspective.WorldToScreenPoint(playerGO.position);
+
+
     
     }
 }
