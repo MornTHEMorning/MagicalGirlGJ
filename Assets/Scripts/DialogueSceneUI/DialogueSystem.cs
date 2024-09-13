@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement; 
+using UnityEngine.Events;
+
 
 namespace Dialogue{
 public class DialogueSystem : MonoBehaviour
@@ -19,6 +21,12 @@ public class DialogueSystem : MonoBehaviour
     [Tooltip("Letter per speed; bigger == longer time")]
     public float textSpeed;
 
+    [Header("Events")]
+    public UnityEvent OnDialogueStarted;
+    public UnityEvent OnNextLine;
+    public UnityEvent OnDialogueFinished;
+
+
     [Header("Next Scene")]
     [Tooltip("Scene after this dialogue runs -- check your build settings for scene name")]
 
@@ -30,6 +38,7 @@ public class DialogueSystem : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
+        OnDialogueStarted.Invoke();
         StartDialogue();        
     }
 
@@ -64,10 +73,12 @@ public class DialogueSystem : MonoBehaviour
         if(index < lines.Length -1){
             index++;
             textComponent.text = string.Empty;
+            OnNextLine.Invoke();
             StartCoroutine(TypeLine());
         }
         else{
             gameObject.SetActive(false);
+            OnDialogueFinished.Invoke();
             // SceneManager.LoadScene(nextScene);
         }
     }
