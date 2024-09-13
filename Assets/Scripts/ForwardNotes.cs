@@ -57,30 +57,8 @@ public class ForwardNotes : MonoBehaviour
 
     internal void Update()
     {
-            
-            if(decimateSelf){Destroy(GetComponent<GameObject>().gameObject,0.5f);}//if it hits the riff, destroy yoursel}
-
-            else{
-                //update position
-            transform.position = (transform.position - new Vector3(0,0,0.1f*speed));
-            }
-
-            // if(ActivateConsole){
-            //     Debug.Log("Object: "+nameof(this.transform.parent)+" Position:"+transform.position);
-            // }
+        //position
+        transform.position = (transform.position - new Vector3(0,0,0.1f*speed));
     }
-
-
-    //comes with the IsTrigger on the collider (TODO: Set the OnTrigger -> BoxCollider on unity file)
-    internal void OnTriggerEnter(Collider other){
-        if(ActivateConsole){Debug.Log("Collision occured!");}
-
-        //https://www.youtube.com/watch?v=mkErt53EEFY - from this video
-        if(other.gameObject.CompareTag("Riff")){
-            if(ActivateConsole){Debug.Log("Object is being destroyed rn");}
-            decimateSelf = true;
-        }
-    }
-
 
 }

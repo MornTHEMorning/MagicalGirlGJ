@@ -2,14 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(BoxCollider))]
 public class LaneCollisions : MonoBehaviour
 {
     public bool ActivateConsole;
 
+
+
+    private void SetUpBoxCollider(BoxCollider boxCollider){
+        boxCollider.isTrigger = true;
+    }
+    private void SetUpRigidbody(Rigidbody rb){
+        rb.useGravity = false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+            SetUpBoxCollider(GetComponent<BoxCollider>());
+            SetUpRigidbody(GetComponent<Rigidbody>());   
     }
 
     // Update is called once per frame
@@ -18,8 +30,6 @@ public class LaneCollisions : MonoBehaviour
         
     }
 
-    
-    //comes with the IsTrigger on the collider (TODO: Set the OnTrigger -> BoxCollider on unity file)
     internal void OnTriggerEnter(Collider other){
         if(ActivateConsole){Debug.Log("Collision occured!");}
 
